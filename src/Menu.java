@@ -43,9 +43,15 @@ public class Menu {
 
                 switch (opcao) {
                     case 1 -> {
-                        System.out.println("\nProduto");
-                            /*System.out.println("Digite a opção desejada:");
-                            submenu = leia.nextInt();*/
+                        System.out.println("\n******************** Produto **********************");
+                        System.out.println("               1 - Adicionar produto                 ");//Gabriel Galvão (criar pedido e listar no final o pedido)
+                        System.out.println("               2 - Alterar produto                   ");
+                        System.out.println("               3 - Excluir produto                   ");
+                        System.out.println("               4 - Listar todos os produtos          ");
+                        System.out.println("               0 - Voltar ao menu principal          ");
+                        System.out.println("*****************************************************");
+                            System.out.println("Digite a opção desejada:");
+                            submenu = leia.nextInt();
                         switch (submenu) {
                             case 1:
                                 System.out.println("1 - Adicionar produto");
@@ -59,14 +65,21 @@ public class Menu {
                             case 4:
                                 System.out.println("4 - Listar todos os produtos");
                                 break;
-                            default:
-                                System.out.println("Voltar ao menu principal");
+                            case 0:
+                                System.out.println("0 - Voltar ao menu principal");
                                 break;
                         }
                     }
                     case 2 -> {
-                            /*System.out.println("Digite a opção desejada:");
-                            submenu = leia.nextInt();*/
+                        System.out.println("********************** Pedido ***********************");
+                        System.out.println("               1 - Criar Pedido                      ");//Gabriel Galvão (criar pedido e listar no final o pedido)
+                        System.out.println("               2 - Listar Itens do Pedido            ");
+                        System.out.println("               3 - Excluir Item do pedido            ");
+                        System.out.println("               4 - Gerar relatório                   ");
+                        System.out.println("               0 - Voltar ao menu principal          ");
+                        System.out.println("*****************************************************");
+                            System.out.println("Digite a opção desejada:");
+                            submenu = leia.nextInt();
                         System.out.println("\n");
                         System.out.println("*** Pedido ***");
                         switch (submenu) {
@@ -82,7 +95,7 @@ public class Menu {
                             case 4:
                                 System.out.println("4 - Gerar relatório ao fim do dia");
                                 break;
-                            default:
+                            case 0:
                                 System.out.println("Voltar ao menu principal");
                                 break;
                         }
