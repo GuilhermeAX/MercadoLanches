@@ -11,6 +11,13 @@ public abstract class Produto {
         this.tipo = tipo;
     }
 
+    public Produto(String nome, float preco) {
+            this.nome = nome;
+            this.preco = preco;
+        }
+
+
+
     public String getNome() {
         return nome;
     }
