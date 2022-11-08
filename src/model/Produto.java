@@ -63,6 +63,5 @@ public abstract class Produto {
         System.out.println("Nome: " + getNome());
         System.out.println("Preço: R$ " + getPreco());
         System.out.println("Classificação: " + tipo);
-        System.out.println("************************************");
     }
 }

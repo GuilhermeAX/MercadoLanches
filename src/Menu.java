@@ -1,3 +1,4 @@
+import model.Bebida;
 import util.Cores;
 
 import java.io.IOException;
@@ -10,7 +11,7 @@ public class Menu {
         int opcao, submenu;
         //boolean loop = true;
 
-
+        Bebida suco01 = new Bebida("Natural", 5.50f, 1, "Ades", "Laranja", 500, 12,2);
 
         while (true) {
             try {
@@ -62,7 +63,10 @@ public class Menu {
                             case 3 -> System.out.println("3 - Excluir produto");
 
 
-                            case 4 -> System.out.println("4 - Listar todos os produtos");
+                            case 4 -> {
+                                System.out.println("4 - Listar todos os produtos");
+                                suco01.visualizar();
+                            }
 
 
                             default -> System.out.println("0 - Voltar ao menu principal");
