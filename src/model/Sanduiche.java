@@ -5,8 +5,8 @@ public class Sanduiche extends Produto {
     nome: X-Bacon, preço: R$14.99, tipo 1
  */
 
-    public Sanduiche(String nome, float preco, int tipo) {
-        super(nome, preco, tipo);
+    public Sanduiche(String nome, float preco, int tipo, int id) {
+        super(nome, preco, tipo, id);
     }
 
     public void visualizar() {

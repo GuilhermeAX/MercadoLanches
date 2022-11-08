@@ -10,9 +10,9 @@ public class Bebida extends Produto {
     private int capacidade;
     private int quantidadeEmEstoque;
 
-    public Bebida(String nome, float preco, int categoria, String marca, String sabor, int capacidade, int quantidadeEmEstoque, int classificacao) {
+    public Bebida(String nome, float preco, int categoria, String marca, String sabor, int capacidade, int quantidadeEmEstoque, int classificacao, int id) {
 
-        super(nome, preco, classificacao);
+        super(nome, preco, classificacao, id);
         this.categoria = categoria;
         this.marca = marca;
         this.sabor = sabor;

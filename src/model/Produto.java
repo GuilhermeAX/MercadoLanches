@@ -5,11 +5,13 @@ public abstract class Produto {
     private String nome;
     private float preco;
     private int tipo;
+    private int id;
 
-    public Produto(String nome, float preco, int tipo) {
+    public Produto(String nome, float preco, int tipo, int id) {
         this.nome = nome;
         this.preco = preco;
         this.tipo = tipo;
+        this.id = id;
     }
 
     public Produto(String nome, float preco) {
@@ -17,6 +19,13 @@ public abstract class Produto {
         this.preco = preco;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
