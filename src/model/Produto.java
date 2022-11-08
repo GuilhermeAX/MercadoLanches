@@ -1,5 +1,6 @@
 package model;
 
+
 public abstract class Produto {
     private String nome;
     private float preco;
@@ -12,10 +13,9 @@ public abstract class Produto {
     }
 
     public Produto(String nome, float preco) {
-            this.nome = nome;
-            this.preco = preco;
-        }
-
+        this.nome = nome;
+        this.preco = preco;
+    }
 
 
     public String getNome() {
@@ -57,11 +57,15 @@ public abstract class Produto {
             case 4:
                 tipo = "Sobremesa";
                 break;
+            case 5:
+                tipo = "Combo";
+                break;
         }
         System.out.println("************************************");
         System.out.println("****** INFORMAÇÕES DO PRODUTO ******");
         System.out.println("Nome: " + getNome());
-        System.out.println("Preço: R$ " + getPreco());
+        System.out.println("Preço: R$" + getPreco());
         System.out.println("Classificação: " + tipo);
     }
+
 }

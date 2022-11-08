@@ -6,4 +6,6 @@ public class Combo extends Produto{
     public Combo(String nome, float preco, int tipo) {
         super(nome, preco, tipo);
     }
+
+    //Combo combo1 = new Combo("X-Java + Batata G + Refrigerante 310ML", 14.5f, 5);
 }

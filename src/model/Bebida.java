@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Bebida extends Produto {
 
     private int categoria;//Diz se é bebida
@@ -8,15 +10,14 @@ public class Bebida extends Produto {
     private int capacidade;
     private int quantidadeEmEstoque;
 
-
     public Bebida(String nome, float preco, int categoria, String marca, String sabor, int capacidade, int quantidadeEmEstoque, int classificacao) {
+
         super(nome, preco, classificacao);
         this.categoria = categoria;
         this.marca = marca;
         this.sabor = sabor;
         this.capacidade = capacidade;
         this.quantidadeEmEstoque = quantidadeEmEstoque;
-
     }
 
 
@@ -90,15 +91,7 @@ public class Bebida extends Produto {
 
 
             }
-
         }
-
-//        System.out.println("Bebida: " + tipo);
-//        System.out.println("Nome: " + getNome());
-//        System.out.println("Sabor: " + getSabor());
-//        System.out.println("Capacidade (mL): " + capacidade);
-//        System.out.println("Preco: " + getPreco());
-//        System.out.println("Quantidade em estoque: " + getQuantidadeEmEstoque());
     }
 }
 

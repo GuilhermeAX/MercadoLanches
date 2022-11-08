@@ -1,3 +1,4 @@
+import controller.ControllerProduto;
 import model.Bebida;
 import util.Cores;
 
@@ -9,9 +10,10 @@ public class Menu {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
         int opcao, submenu;
-        //boolean loop = true;
+
 
         Bebida suco01 = new Bebida("Natural", 5.50f, 1, "Ades", "Laranja", 500, 12,2);
+
 
         while (true) {
             try {
@@ -45,7 +47,7 @@ public class Menu {
                 switch (opcao) {
                     case 1 -> {
                         System.out.println(Cores.TEXT_YELLOW + "\n******************** Produto ***********************" + Cores.TEXT_RESET);
-                        System.out.println("               1 - Adicionar produto                 ");//Gabriel Galvão (criar pedido e listar no final o pedido)
+                        System.out.println("               1 - Adicionar produto                 ");
                         System.out.println("               2 - Alterar produto                   ");
                         System.out.println("               3 - Excluir produto                   ");
                         System.out.println("               4 - Listar todos os produtos          ");
@@ -54,8 +56,11 @@ public class Menu {
                         System.out.println("Digite a opção desejada:");
                         submenu = leia.nextInt();
                         switch (submenu) {
-                            case 1 -> System.out.println("1 - Adicionar produto");
-
+                            case 1 -> {
+                                System.out.println("1 - Adicionar produto");
+                                ControllerProduto controllerProduto = new ControllerProduto();
+                                controllerProduto.salvarProduto();
+                            }
 
                             case 2 -> System.out.println("2 - Alterar produto");
 
@@ -77,10 +82,10 @@ public class Menu {
                     }
                     case 2 -> {
                         System.out.println(Cores.TEXT_YELLOW + "********************** Pedido ***********************" + Cores.TEXT_RESET);
-                        System.out.println("               1 - Criar Pedido                      ");//Gabriel Galvão (criar pedido e listar no final o pedido)
+                        System.out.println("               1 - Criar Pedido                      ");
                         System.out.println("               2 - Listar Itens do Pedido            ");
                         System.out.println("               3 - Excluir Item do pedido            ");
-                        System.out.println("               4 - Gerar relatório                   ");
+                        System.out.println("               4 - Gerar relatório                   "); //foi vendido: 30 fantas .... foi apurado R$2000
                         System.out.println("               0 - Voltar ao menu principal          ");
                         System.out.println(Cores.TEXT_YELLOW + "*****************************************************" + Cores.TEXT_RESET);
                         System.out.println("Digite a opção desejada:");
@@ -129,4 +134,6 @@ public class Menu {
             System.out.println("Você pressionou uma tecla diferente de enter!");
         }
     }
+
+
 }
