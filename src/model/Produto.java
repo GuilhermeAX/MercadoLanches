@@ -50,8 +50,15 @@ public abstract class Produto {
     public void setTipo(int tipo) {
         this.tipo = tipo;
     }
+    
+    
 
-    public void visualizar() {
+    @Override
+	public String toString() {
+		return "nome: " + nome + ", preco: " + preco + ", tipo: " + tipo + ", id: " + id + "";
+	}
+
+	public void visualizar() {
         String tipo = "";
         switch (getTipo()) {
             case 1:
