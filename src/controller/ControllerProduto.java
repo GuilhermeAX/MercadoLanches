@@ -3,20 +3,22 @@ package controller;
 import model.Produto;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
-public class ControllerProduto {
-    Scanner leia = new Scanner(System.in);
+public class ControllerProduto implements InterfaceProduto{
+    
+	Scanner leia = new Scanner(System.in);
+	
     private String nome;
     private float preco;
     private int tipo;
-    String msg;
     private int id;
 
-    ArrayList<Produto> produtoArrayList = new ArrayList<>();
-
+    protected ArrayList<Produto> produtoArrayList = new ArrayList<>();
+    
+    @Override
     public void salvarProduto() {
-
 
         System.out.println("Nome do produto; ");
         this.nome = leia.next();
@@ -27,19 +29,23 @@ public class ControllerProduto {
 
         Produto produto = new Produto(this.nome, this.preco, this.tipo,this.id) {
         };
-
         produtoArrayList.add(produto);
-        produto.visualizar();
-
     }
-
+    
+    @Override
     public void atualizarProduto() {}
-
-    public void listarProdutos() {}
+    
+    @Override
+    public void listarProdutos() {
+    	
+        for(Produto produto  : produtoArrayList) {
+        	System.out.println(produto);
+        	}
+        }
 
     public Produto buscarNumeroProduto(int id) {
-        for(var produto : produtoArrayList) {
-            if(produto.getId() == id) {
+        for(Produto produto : produtoArrayList) {
+            if(produto.equals(id)) {
                 produtoArrayList.remove(produto);
                 return produto;
             }
