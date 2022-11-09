@@ -42,7 +42,7 @@ public class ControllerProduto implements InterfaceProduto{
         	System.out.println(produto);
         	}
         }
-
+    @Override
     public Produto buscarNumeroProduto(int id) {
         for(Produto produto : produtoArrayList) {
             if(produto.equals(id)) {
@@ -52,7 +52,7 @@ public class ControllerProduto implements InterfaceProduto{
         }
         return null;
     }
-
+    @Override
     public void excluirProduto(int id) {
         var produto = buscarNumeroProduto(id);
         if (produto !=null){
@@ -62,7 +62,7 @@ public class ControllerProduto implements InterfaceProduto{
                 System.out.println("O item não foi encotrado!");
         }
     }
-
+    @Override
     public int gerarNumero() {
         return produtoArrayList.size() + 1;
     }
