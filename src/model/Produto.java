@@ -4,13 +4,12 @@ package model;
 public abstract class Produto {
     private String nome;
     private float preco;
-    private int tipo;
     private int id;
 
-    public Produto(String nome, float preco, int tipo, int id) {
+    public Produto(String nome, float preco, int id) {
         this.nome = nome;
         this.preco = preco;
-        this.tipo = tipo;
+        //this.tipo = tipo;
         this.id = id;
     }
 
@@ -43,24 +42,23 @@ public abstract class Produto {
         this.preco = preco;
     }
 
-    public int getTipo() {
+   /* public int getTipo() {
         return tipo;
     }
 
     public void setTipo(int tipo) {
         this.tipo = tipo;
-    }
-    
-    
+    }*/
+
 
     @Override
-	public String toString() {
-		return "nome: " + nome + ", preco: " + preco + ", tipo: " + tipo + ", id: " + id + "";
-	}
+    public String toString() {
+        return "Nome: " + nome + ", Preco: " + preco + ", ID: " + id + "";
+    }
 
-	public void visualizar() {
-        String tipo = "";
-        switch (getTipo()) {
+    public void visualizar() {
+        /* String tipo = "";
+       switch (getTipo()) {
             case 1:
                 tipo = "Sanduíche";
                 break;
@@ -76,12 +74,12 @@ public abstract class Produto {
             case 5:
                 tipo = "Combo";
                 break;
-        }
+        }*/
         System.out.println("************************************");
         System.out.println("****** INFORMAÇÕES DO PRODUTO ******");
         System.out.println("Nome: " + getNome());
         System.out.println("Preço: R$" + getPreco());
-        System.out.println("Classificação: " + tipo);
+//        System.out.println("Classificação: " + tipo);
     }
 
 }

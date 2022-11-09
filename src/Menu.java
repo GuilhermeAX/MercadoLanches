@@ -1,5 +1,5 @@
 import controller.ControllerProduto;
-import model.Bebida;
+import model.Sanduiche;
 import util.Cores;
 
 import java.io.IOException;
@@ -9,12 +9,10 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
-        int opcao, submenu;
+        int opcao, submenu, codigo, id;
+        String nome;
+        float preco;
         ControllerProduto produto = new ControllerProduto();
-
-
-        Bebida suco01 = new Bebida("Natural", 5.50f, 1, "Ades", "Laranja", 500, 12,2,2);
-
 
         while (true) {
             try {
@@ -48,23 +46,39 @@ public class Menu {
                 switch (opcao) {
                     case 1 -> {
                         System.out.println(Cores.TEXT_YELLOW + "\n******************** Produto ***********************" + Cores.TEXT_RESET);
-                        System.out.println("               1 - Adicionar produto                 ");//VALDEMIRO
-                        System.out.println("               2 - Alterar produto                   ");//---
-                        System.out.println("               3 - Excluir produto                   ");//FEITO
-                        System.out.println("               4 - Listar todos os produtos          ");//VALDEMIRO
+                        System.out.println("               1 - Adicionar produto                 ");
+                        System.out.println("               2 - Alterar produto                   ");
+                        System.out.println("               3 - Excluir produto                   ");
+                        System.out.println("               4 - Listar todos os produtos          ");
                         System.out.println("               0 - Voltar ao menu principal          ");
                         System.out.println(Cores.TEXT_YELLOW + "*****************************************************" + Cores.TEXT_RESET);
                         System.out.println("Digite a opção desejada:");
                         submenu = leia.nextInt();
                         switch (submenu) {
                             case 1 -> {
-//                                System.out.println("1 - Adicionar produto");
-//                                ControllerProduto controllerProduto = new ControllerProduto();
-//                                controllerProduto.salvarProduto();
-                            	produto.salvarProduto();
+                                produto.salvarProduto();
                             }
 
-                            case 2 -> System.out.println("2 - Alterar produto");
+                            case 2 -> {
+                                System.out.println("2 - Alterar produto");
+                                System.out.println("Digite o código do produto: ");
+                                codigo = leia.nextInt();
+                                leia.skip("\\R?");
+
+                                if (produto.buscarNumeroProduto(codigo) != null) {
+                                    System.out.println("Digite o nome do produto: ");
+                                    leia.skip("\\R?");
+                                    nome = leia.nextLine();
+                                    System.out.println("Digite o preço do produto: ");
+                                    preco = leia.nextFloat();
+                                    id = produto.retornaId(codigo);
+                                    produto.atualizarProduto(new Sanduiche(nome, preco, id));
+                                } else {
+                                    System.out.println("Produto não encontrado!");
+                                }
+
+                                break;
+                            }
 
 
                             case 3 -> {
@@ -91,7 +105,8 @@ public class Menu {
                         }
                         keyPress();
                     }
-                    case 2 -> {
+                    //------------IMPLEMENTAÇÃO FUTURA----------
+                    /*case 2 -> {
                         System.out.println(Cores.TEXT_YELLOW + "********************** Pedido ***********************" + Cores.TEXT_RESET);
                         System.out.println("               1 - Criar Pedido                      ");//AMANHA
                         System.out.println("               4 - Gerar relatório                   ");//AMANHA
@@ -117,7 +132,7 @@ public class Menu {
                             }
                         }
                         keyPress();
-                    }
+                    }*/
 
                 }
             } catch (InputMismatchException e) {
