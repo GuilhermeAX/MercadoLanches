@@ -61,6 +61,7 @@ public class Menu {
 //                                System.out.println("1 - Adicionar produto");
 //                                ControllerProduto controllerProduto = new ControllerProduto();
 //                                controllerProduto.salvarProduto();
+                            	produto.salvarProduto();
                             }
 
                             case 2 -> System.out.println("2 - Alterar produto");
